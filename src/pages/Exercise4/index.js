@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 import { GraphPoint } from './GraphPoint';
@@ -7,9 +8,9 @@ import './styles.css';
 export const Exercise4 = () => {
   const [showExplainer, setShowExplainer] = useState(false);
 
-  function setGraphPointOn() {
+  const setGraphPointOn = useCallback(() => {
     return Math.random() > 0.8;
-  }
+  }, [])
 
   return (
     <div className='container'>
